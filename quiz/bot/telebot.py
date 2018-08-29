@@ -2,6 +2,7 @@ from abc import ABC, abstractmethod
 from typing import Any, Iterable, Callable, BinaryIO
 from telebot import TeleBot
 from telebot.types import Message
+from quiz.bot.message import VoiceMessage, Voice
 
 
 class Bot(ABC):
@@ -9,7 +10,7 @@ class Bot(ABC):
 
     @abstractmethod
     def message_handler(self, commands: Iterable[str] = None, regexp: str = None, func: Callable = None,
-                        content_types: Iterable[str] = None, **kwargs: Any) -> Any:
+                        content_types: Iterable[str] = 'text', **kwargs: Any) -> Any:
         pass
 
     @abstractmethod
@@ -21,7 +22,7 @@ class Bot(ABC):
     @abstractmethod
     def send_voice(self, chat_id: int, voice: BinaryIO, caption: str = None, duration: int = None,
                    reply_to_message_id: int = None, reply_markup: bool = None,
-                   parse_mode: str = None, disable_notification: bool = None, timeout: int = None) -> Message:
+                   parse_mode: str = None, disable_notification: bool = None, timeout: int = None) -> Voice:
         pass
 
     @abstractmethod
@@ -36,7 +37,7 @@ class QuizBot(Bot):
         self._bot: TeleBot = TeleBot(token='676607913:AAHX9mdt54NpnXdturivR6KuS6lNbWDxDPM')
 
     def message_handler(self, commands: Iterable[str] = None, regexp: str = None, func: Callable = None,
-                        content_types: Iterable[str] = None, **kwargs: Any) -> Any:
+                        content_types: Iterable[str] = 'text', **kwargs: Any) -> Any:
 
         return self._bot.message_handler(commands, regexp, func, content_types, **kwargs)
 
@@ -49,10 +50,10 @@ class QuizBot(Bot):
 
     def send_voice(self, chat_id: int, voice: BinaryIO, caption: str = None, duration: int = None,
                    reply_to_message_id: int = None, reply_markup: bool = None, parse_mode: str = None,
-                   disable_notification: bool = None, timeout: int = None) -> Message:
+                   disable_notification: bool = None, timeout: int = None) -> Voice:
 
-        return self._bot.send_voice(chat_id, voice, caption, duration, reply_to_message_id,
-                                    reply_markup, parse_mode, disable_notification, timeout)
+        return VoiceMessage(self._bot.send_voice(chat_id, voice, caption, duration, reply_to_message_id,
+                                                 reply_markup, parse_mode, disable_notification, timeout))
 
     def polling(self, none_stop: bool = False, interval: int = 0, timeout: int = 20) -> None:
         self._bot.polling(none_stop, interval, timeout)
