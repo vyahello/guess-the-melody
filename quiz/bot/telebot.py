@@ -2,6 +2,8 @@ from abc import ABC, abstractmethod
 from typing import Any, Iterable, Callable, BinaryIO
 from telebot import TeleBot
 from telebot.types import Message
+
+from quiz.bot.config import Config
 from quiz.bot.message import VoiceMessage, Voice
 
 
@@ -33,8 +35,8 @@ class Bot(ABC):
 class QuizBot(Bot):
     """Quiz melody bot implementation."""
 
-    def __init__(self) -> None:
-        self._bot: TeleBot = TeleBot(token='676607913:AAHX9mdt54NpnXdturivR6KuS6lNbWDxDPM')
+    def __init__(self, config: Config) -> None:
+        self._bot: TeleBot = TeleBot(config.token())
 
     def message_handler(self, commands: Iterable[str] = None, regexp: str = None, func: Callable = None,
                         content_types: Iterable[str] = 'text', **kwargs: Any) -> Any:
