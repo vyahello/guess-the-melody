@@ -1,6 +1,6 @@
 from abc import ABC, abstractmethod
 from typing import Type
-from quiz.bot.config import Config
+from quiz.config import Config
 
 
 class Table(ABC):

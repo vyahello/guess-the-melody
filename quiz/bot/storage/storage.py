@@ -1,6 +1,6 @@
 from abc import ABC, abstractmethod
 from typing import List, Tuple, Type, Any
-from quiz.bot.config import Config
+from quiz.config import Config
 from quiz.bot.storage.connection import Conn, DBConn
 from quiz.bot.storage.pointer import Pointer, DBPointer
 from quiz.bot.storage.table import Table, DBTable

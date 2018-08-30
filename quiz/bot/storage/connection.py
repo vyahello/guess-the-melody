@@ -1,7 +1,7 @@
 from abc import abstractmethod
 from sqlite3.dbapi2 import Cursor, Connection, connect
 from typing import Type
-from quiz.bot.config import Config
+from quiz.config import Config
 from quiz.types import ContextManager
 
 

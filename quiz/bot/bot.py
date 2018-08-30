@@ -2,8 +2,8 @@ from abc import ABC, abstractmethod
 from typing import Any, Iterable, Callable
 from telebot import TeleBot
 from telebot.types import Message, ReplyKeyboardRemove, ReplyKeyboardMarkup
-from quiz.bot.message import VoiceMessage, Voice
-from quiz.bot.config import Config
+from quiz.bot.message.message import VoiceMessage, Voice
+from quiz.config import Config
 
 
 class Bot(ABC):

@@ -1,6 +1,6 @@
 from shelve import DbfilenameShelf, open
 from typing import Type
-from quiz.bot.config import Config
+from quiz.config import Config
 from quiz.types import ContextManager, DictAccess
 
 
