@@ -1,7 +1,7 @@
 from abc import ABC, abstractmethod
-from typing import Any, Iterable, Callable, BinaryIO
+from typing import Any, Iterable, Callable
 from telebot import TeleBot
-from telebot.types import Message, ReplyKeyboardRemove
+from telebot.types import Message, ReplyKeyboardRemove, ReplyKeyboardMarkup
 from quiz.bot.message import VoiceMessage, Voice
 from quiz.bot.config import Config
 
@@ -21,8 +21,8 @@ class Bot(ABC):
         pass
 
     @abstractmethod
-    def send_voice(self, chat_id: int, voice: BinaryIO, caption: str = None, duration: int = None,
-                   reply_to_message_id: int = None, reply_markup: bool = None,
+    def send_voice(self, chat_id: int, voice: Any, caption: str = None, duration: int = None,
+                   reply_to_message_id: int = None, reply_markup: ReplyKeyboardMarkup = None,
                    parse_mode: str = None, disable_notification: bool = None, timeout: int = None) -> Voice:
         pass
 
@@ -49,7 +49,7 @@ class QuizBot(Bot):
         return self._bot.send_message(chat_id, text, disable_notification, reply_to_message_id, reply_markup,
                                       parse_mode, disable_notification)
 
-    def send_voice(self, chat_id: int, voice: BinaryIO, caption: str = None, duration: int = None,
+    def send_voice(self, chat_id: int, voice: Any, caption: str = None, duration: int = None,
                    reply_to_message_id: int = None, reply_markup: bool = None, parse_mode: str = None,
                    disable_notification: bool = None, timeout: int = None) -> Voice:
 
