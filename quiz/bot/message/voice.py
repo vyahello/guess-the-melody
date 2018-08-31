@@ -2,7 +2,7 @@ from abc import ABC, abstractmethod
 from telebot.types import Message
 
 
-class Voice(ABC):
+class VoiceMessage(ABC):
     """Abstract interface for a bot voice message."""
 
     @abstractmethod
@@ -18,7 +18,7 @@ class Voice(ABC):
         pass
 
 
-class VoiceMessage(Voice):
+class BotVoiceMessage(VoiceMessage):
     """Represent voice message implementation."""
 
     def __init__(self, message: Message) -> None:
