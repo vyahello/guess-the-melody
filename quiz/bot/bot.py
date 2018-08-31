@@ -2,7 +2,7 @@ from abc import ABC, abstractmethod
 from typing import Any, Iterable, Callable
 from telebot import TeleBot
 from telebot.types import Message, ReplyKeyboardRemove, ReplyKeyboardMarkup
-from quiz.bot.message.message import VoiceMessage, Voice
+from quiz.bot.message.voice import BotVoiceMessage, VoiceMessage
 from quiz.config import Config
 
 
@@ -23,7 +23,7 @@ class Bot(ABC):
     @abstractmethod
     def send_voice(self, chat_id: int, voice: Any, caption: str = None, duration: int = None,
                    reply_to_message_id: int = None, reply_markup: ReplyKeyboardMarkup = None,
-                   parse_mode: str = None, disable_notification: bool = None, timeout: int = None) -> Voice:
+                   parse_mode: str = None, disable_notification: bool = None, timeout: int = None) -> VoiceMessage:
         pass
 
     @abstractmethod
@@ -51,10 +51,10 @@ class QuizBot(Bot):
 
     def send_voice(self, chat_id: int, voice: Any, caption: str = None, duration: int = None,
                    reply_to_message_id: int = None, reply_markup: bool = None, parse_mode: str = None,
-                   disable_notification: bool = None, timeout: int = None) -> Voice:
+                   disable_notification: bool = None, timeout: int = None) -> VoiceMessage:
 
-        return VoiceMessage(self._bot.send_voice(chat_id, voice, caption, duration, reply_to_message_id,
-                                                 reply_markup, parse_mode, disable_notification, timeout))
+        return BotVoiceMessage(self._bot.send_voice(chat_id, voice, caption, duration, reply_to_message_id,
+                                                    reply_markup, parse_mode, disable_notification, timeout))
 
     def polling(self, none_stop: bool = False, interval: int = 0, timeout: int = 20) -> None:
         self._bot.polling(none_stop, interval, timeout)
