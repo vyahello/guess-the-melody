@@ -7,6 +7,9 @@ Run script from the root directory of the project:
 ~ python quiz.py
 ```
 
+## Demo
+![Screenshot](bot.png)
+
 # Contributing
 - clone the repository
 - configure Git for the first time after cloning with your name and email
