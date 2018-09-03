@@ -1,7 +1,7 @@
 from abc import ABC, abstractmethod
 from random import shuffle
 from typing import Type, Tuple
-from quiz.bot.navigation.keyboard import BotReplyKeyboard, MarkUp
+from quiz.bot.navigation.keyboard import BotReplyKeyboard, MarkUp, BotReplyKeyboardMarkup
 from quiz.config import Config
 from quiz.bot.storage.shelter import Shelter
 from quiz.bot.storage.storage import Storage, MelodyStorage
@@ -72,7 +72,7 @@ class GenerateBotKeyboardMarkUp(Action):
         self._wrong_answer = wrong_answer
 
     def perform(self) -> MarkUp:
-        mark_up: MarkUp = BotReplyKeyboard().markup()
+        mark_up: MarkUp = BotReplyKeyboardMarkup()
 
         items: list = [item for item in '{},{}'.format(self._right_answer, self._wrong_answer).split(',')]
         shuffle(items)

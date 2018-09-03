@@ -1,7 +1,7 @@
 import random
 from quiz.bot.bot import Bot, QuizBot
 from quiz.bot.message.user import UserMessage, BotUserMessage
-from quiz.bot.navigation.keyboard import BotReplyKeyboard
+from quiz.bot.navigation.keyboard import BotReplyKeyboard, BotRemoveKeyboard
 from quiz.config import Config
 from quiz.bot.storage.storage import Storage, MelodyStorage
 from telebot.types import Message
@@ -39,7 +39,7 @@ def check_answer(message: Message) -> None:
     if not answer:
         bot.send_message(chat_id, 'Choose /game command to start the quiz melody game')
     else:
-        hide_keyboard: Action = BotReplyKeyboard().remove()
+        hide_keyboard: Action = BotRemoveKeyboard()
         if message.text == answer:
             bot.send_message(chat_id, 'Correct! Try once more /game?', reply_markup=hide_keyboard.perform())
         else:

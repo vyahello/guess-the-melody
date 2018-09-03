@@ -31,7 +31,7 @@ class MarkUp(ABC):
 class BotRemoveKeyboard(Action):
     """Bot keyboard removal implementation."""
 
-    def __init__(self, selective: Any) -> None:
+    def __init__(self, selective: Any = None) -> None:
         self._remove: ReplyKeyboardRemove = ReplyKeyboardRemove(selective)
 
     def perform(self) -> ReplyKeyboardRemove:
