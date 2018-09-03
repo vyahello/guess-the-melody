@@ -36,11 +36,11 @@ class MelodyStorage(Storage):
 
     def select_all(self) -> List[Tuple[str]]:
         with self._conn:
-            return self._pointer.fetch_all('select * from {}'.format(self._table))
+            return self._pointer.fetch_all('select * from {}'.format(self._table.name()))
 
     def select_single(self, row_num: int) -> Tuple[Any]:
         with self._conn:
-            return self._pointer.fetch_all('select * from {} where id is {}'.format(self._table, row_num))[0]
+            return self._pointer.fetch_all('select * from {} where id is {}'.format(self._table.name(), row_num))[0]
 
     def count_rows(self) -> int:
         return len(self.select_all())

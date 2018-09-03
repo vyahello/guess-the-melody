@@ -7,6 +7,12 @@ Run script from the root directory of the project:
 ~ python quiz.py
 ```
 
+## Run unittests
+Run script from the root directory of the project:
+```bash
+~ pytest -s -v
+```
+
 ## Demo
 ![Screenshot](bot.png)
 

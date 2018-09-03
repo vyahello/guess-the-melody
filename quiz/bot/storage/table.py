@@ -10,10 +10,6 @@ class Table(ABC):
     def name(self) -> str:
         pass
 
-    @abstractmethod
-    def __str__(self) -> str:
-        pass
-
 
 class DBTable(Table):
     """Database table implementation."""
@@ -23,6 +19,3 @@ class DBTable(Table):
 
     def name(self) -> str:
         return self._config.db_name.split('.')[0]
-
-    def __str__(self) -> str:
-        return f"{self.name()}"
