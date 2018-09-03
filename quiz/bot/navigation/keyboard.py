@@ -61,10 +61,10 @@ class BotReplyKeyboardMarkup(MarkUp):
 class BotReplyKeyboard(Keyboard):
     """Bot keyboard implementation."""
 
-    def __init__(self, resize_keyboard: bool=True,
+    def __init__(self, resize_keyboard: bool=False,
                  one_time_keyboard: bool=True,
                  selective: Any=None,
-                 row_width: int=3) -> None:
+                 row_width: int=1) -> None:
 
         self._markup: MarkUp = BotReplyKeyboardMarkup(resize_keyboard,
                                                       one_time_keyboard,
