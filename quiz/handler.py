@@ -1,11 +1,12 @@
 import random
 from quiz.bot.bot import Bot, QuizBot
 from quiz.bot.message.user import UserMessage, BotUserMessage
+from quiz.bot.navigation.keyboard import BotReplyKeyboard
 from quiz.config import Config
 from quiz.bot.storage.storage import Storage, MelodyStorage
 from telebot.types import Message
-from telebot.types import ReplyKeyboardRemove
-from quiz.bot.tools.utils import Utils, ShelterUtils, generate_markup
+from quiz.bot.tools.utils import Utils, ShelterUtils, GenerateBotKeyboardMarkUp
+from quiz.types import Action
 
 bot: Bot = QuizBot()
 
@@ -23,8 +24,8 @@ def game(message: Message) -> None:
     utils: Utils = ShelterUtils(Config)
     _, file_id, right_answer, wrong_answer = data_base.select_single(random.randint(1, utils.get_rows_count()))
 
-    markup = generate_markup(right_answer, wrong_answer)
-    bot.send_voice(chat_id, file_id, reply_markup=markup)
+    markup = GenerateBotKeyboardMarkUp(right_answer, wrong_answer).perform()
+    bot.send_voice(chat_id, file_id, reply_markup=markup.keyboard())
     utils.set_user_game(chat_id, right_answer)
     data_base.close()
 
@@ -38,10 +39,10 @@ def check_answer(message: Message) -> None:
     if not answer:
         bot.send_message(chat_id, 'Choose /game command to start the quiz melody game')
     else:
-        keyboard_hider = ReplyKeyboardRemove()
+        hide_keyboard: Action = BotReplyKeyboard().remove()
         if message.text == answer:
-            bot.send_message(chat_id, 'Correct! Try once more /game?', reply_markup=keyboard_hider)
+            bot.send_message(chat_id, 'Correct! Try once more /game?', reply_markup=hide_keyboard.perform())
         else:
             bot.send_message(chat_id, 'Wrong answer! Try once more /game?',
-                             reply_markup=keyboard_hider)
+                             reply_markup=hide_keyboard.perform())
         utils.finish_user_game(chat_id)

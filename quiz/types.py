@@ -32,3 +32,11 @@ class DictAccess(ABC):
     @abstractmethod
     def __delitem__(self, key: Any) -> None:
         pass
+
+
+class Action(ABC):
+    """Abstraction for a bot action."""
+
+    @abstractmethod
+    def perform(self) -> Any:
+        pass

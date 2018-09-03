@@ -1,10 +1,11 @@
 from abc import ABC, abstractmethod
 from random import shuffle
 from typing import Type, Tuple
-from telebot.types import ReplyKeyboardMarkup
+from quiz.bot.navigation.keyboard import BotReplyKeyboard, MarkUp
 from quiz.config import Config
 from quiz.bot.storage.shelter import Shelter
 from quiz.bot.storage.storage import Storage, MelodyStorage
+from quiz.types import Action
 
 
 class Utils(ABC):
@@ -63,13 +64,19 @@ class ShelterUtils(Utils):
                 pass
 
 
-def generate_markup(right_answer: Tuple[str], wrong_answer: Tuple[str]) -> ReplyKeyboardMarkup:
-    mark_up = ReplyKeyboardMarkup(one_time_keyboard=True, resize_keyboard=True)
-    all_answers: str = '{},{}'.format(right_answer, wrong_answer)
+class GenerateBotKeyboardMarkUp(Action):
+    """Bot keyboard markup generation"""
 
-    list_items: list = [item for item in all_answers.split(',')]
-    shuffle(list_items)
+    def __init__(self, right_answer: Tuple[str], wrong_answer: Tuple[str]) -> None:
+        self._right_answer = right_answer
+        self._wrong_answer = wrong_answer
 
-    for item in list_items:
-        mark_up.add(item)
-    return mark_up
+    def perform(self) -> MarkUp:
+        mark_up: MarkUp = BotReplyKeyboard().markup()
+
+        items: list = [item for item in '{},{}'.format(self._right_answer, self._wrong_answer).split(',')]
+        shuffle(items)
+
+        for item in items:
+            mark_up.add(item)
+        return mark_up
