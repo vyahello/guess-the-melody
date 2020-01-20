@@ -1,0 +1,16 @@
+language: python
+python:
+  - "3.6"
+  - "3.7"
+  - "3.8"
+before_install:
+  - sudo apt-get update
+  - sudo apt-get install -y ghostscript
+  - pip install pip -U
+  - pip install -r requirements-dev.txt -U
+script:
+    - ./analyse-code.sh
+after_success:
+  - coveralls
+notifications:
+  email: false

@@ -18,4 +18,4 @@ class DBTable(Table):
         self._config = config
 
     def name(self) -> str:
-        return self._config.db_name.split('.')[0]
+        return self._config.db_name.split(".")[0]

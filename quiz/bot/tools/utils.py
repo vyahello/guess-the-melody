@@ -1,7 +1,7 @@
 from abc import ABC, abstractmethod
 from random import shuffle
 from typing import Type, Tuple
-from quiz.bot.navigation.keyboard import BotReplyKeyboard, MarkUp, BotReplyKeyboardMarkup
+from quiz.bot.navigation.keyboard import MarkUp, BotReplyKeyboardMarkup
 from quiz.config import Config
 from quiz.bot.storage.shelter import Shelter
 from quiz.bot.storage.storage import Storage, MelodyStorage
@@ -41,11 +41,11 @@ class ShelterUtils(Utils):
 
     def count_rows(self) -> None:
         with Shelter(self._config) as storage:
-            storage['rows_count'] = self._db.count_rows()
+            storage["rows_count"] = self._db.count_rows()
 
     def get_rows_count(self) -> int:
         with Shelter(self._config) as storage:
-            rows_num = storage['rows_count']
+            rows_num = storage["rows_count"]
         return rows_num
 
     def set_user_game(self, chat_id: int, answer: int) -> None:
@@ -74,7 +74,7 @@ class GenerateBotKeyboardMarkUp(Action):
     def perform(self) -> MarkUp:
         mark_up: MarkUp = BotReplyKeyboardMarkup()
 
-        items: list = [item for item in '{},{}'.format(self._right_answer, self._wrong_answer).split(',')]
+        items: list = [item for item in "{},{}".format(self._right_answer, self._wrong_answer).split(",")]
         shuffle(items)
 
         for item in items:
