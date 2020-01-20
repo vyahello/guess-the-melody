@@ -10,7 +10,7 @@ class Shelter(ContextManager, DictAccess):
     def __init__(self, config: Type[Config]) -> None:
         self._shelter: DbfilenameShelf = open(config.shelve_name)
 
-    def __enter__(self) -> 'Shelter':
+    def __enter__(self) -> "Shelter":
         return self
 
     def __getitem__(self, item: str) -> int:

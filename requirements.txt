@@ -1,3 +1,4 @@
-pytelegrambotapi
-telebot
-pytest
+pytelegrambotapi==3.6.7
+telebot==0.0.3
+click==7.0.0
+beauty-print==0.5.1
