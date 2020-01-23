@@ -1,6 +1,6 @@
 from abc import ABC, abstractmethod
 from random import shuffle
-from typing import Type, Tuple
+from typing import Type, Tuple, List
 from quiz.bot.navigation.keyboard import MarkUp, BotReplyKeyboardMarkup
 from quiz.config import Config
 from quiz.bot.storage.shelter import Shelter
@@ -73,10 +73,11 @@ class GenerateBotKeyboardMarkUp(Action):
 
     def perform(self) -> MarkUp:
         mark_up: MarkUp = BotReplyKeyboardMarkup()
-
-        items: list = [item for item in "{},{}".format(self._right_answer, self._wrong_answer).split(",")]
-        shuffle(items)
-
-        for item in items:
+        shuffle(self._items())
+        for item in self._items():
             mark_up.add(item)
         return mark_up
+
+    def _items(self) -> List[str]:
+        items = tuple(item for item in "{},{}".format(self._right_answer, self._wrong_answer).split(","))
+        return list(items)

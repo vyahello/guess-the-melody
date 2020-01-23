@@ -3,18 +3,28 @@
 PACKAGE="quiz"
 
 
+--check-box() {
+    printf "Start ${1} analysis ...\n"
+}
+
+
 check-black() {
-    printf "Start black analysis ...\n" && ( black --check ${PACKAGE} )
+    --check-box "black" && ( black --check ${PACKAGE} )
+}
+
+
+check-flake8() {
+    --check-box "flake" && ( flake8 ${PACKAGE} )
 }
 
 
 check-unittests() {
-    printf "Start unittests analysis ...\n" && pytest
+    --check-box "unittest" && pytest
 }
 
 
 main() {
-    check-black && check-unittests
+    check-black && check-flake8 && check-unittests
 }
 
 

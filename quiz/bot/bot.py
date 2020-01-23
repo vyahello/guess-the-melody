@@ -56,8 +56,8 @@ class Bot(ABC):
 class QuizBot(Bot):
     """Quiz melody bot implementation."""
 
-    def __init__(self) -> None:
-        self._bot: TeleBot = TeleBot(Config.token)
+    def __init__(self, key: str = Config.token) -> None:
+        self._bot: TeleBot = TeleBot(key)
 
     def message_handler(
         self,

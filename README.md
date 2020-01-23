@@ -11,7 +11,7 @@
 [![License](https://img.shields.io/badge/license-MIT-green.svg)](LICENSE.md)
 
 # Guess the melody telegram bot game
-> A quiz telegram bot game written in python
+> Simple quiz telegram bot game written in python. It is called `GuessTheBot` so check for it in a telegram app.
 >
 > ![Screenshot](quiz/demo/bot.png)
 
@@ -20,16 +20,17 @@
 - [pyTelegramBotAPI](https://github.com/eternnoir/pyTelegramBotAPI)
 - code analysis
   - [pytest](https://pypi.org/project/pytest/)
+  - [flake8](http://flake8.pycqa.org/en/latest/)
   - [black](https://black.readthedocs.io/en/stable/)
 
 ## Usage
 Run script from the root directory of the project:
 ```bash
-➜ python -m quiz --run
+➜ python -m quiz --run --key {your-secret-api-key}
 Running quiz bot (press ctrl+c to escape)
 ...
 ```
-Please specify your telegram `API key` to be able to use bot.
+Please specify your telegram `API key` to be able to use a bot.
 
 ## Development notes
 
