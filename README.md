@@ -10,8 +10,10 @@
 [![GitHub contributors](https://img.shields.io/github/contributors/vyahello/guess-the-melody-bot.svg)](https://GitHub.com/vyahello/guess-the-melody-bot/graphs/contributors/)
 [![License](https://img.shields.io/badge/license-MIT-green.svg)](LICENSE.md)
 
-# Guess the melody telegram bot game
-> Simple quiz telegram bot game written in python. It is called `GuessTheBot` so check for it in a telegram app.
+# Guess the melody quiz
+> Simple quiz telegram bot game written in **python**. 
+> 
+> It is called `GuessTheBot` so please check for it in the telegram application.
 >
 > ![Screenshot](quiz/demo/bot.png)
 
