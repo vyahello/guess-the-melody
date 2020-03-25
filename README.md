@@ -1,6 +1,5 @@
 [![made-with-python](https://img.shields.io/badge/Made%20with-Python-1f425f.svg)](https://www.python.org/)
 [![Code style: black](https://img.shields.io/badge/code%20style-black-000000.svg)](https://github.com/psf/black)
-
 [![Build Status](https://travis-ci.org/vyahello/guess-the-melody-bot.svg?branch=master)](https://travis-ci.org/vyahello/guess-the-melody-bot)
 [![Coverage Status](https://coveralls.io/repos/github/vyahello/guess-the-melody-bot/badge.svg?branch=master)](https://coveralls.io/github/vyahello/guess-the-melody-bot?branch=master)
 [![Forks](https://img.shields.io/github/forks/vyahello/guess-the-melody-bot)](https://github.com/vyahello/guess-the-melody-bot/network/members)
@@ -14,8 +13,8 @@
 > Simple quiz telegram bot game written in **python**. 
 > 
 > It is called `GuessTheBot` so please check for it in the telegram application.
->
-> ![Screenshot](quiz/demo/bot.png)
+
+![Screenshot](quiz/demo/bot.png)
 
 ## Tools
 - python 3.6+
@@ -28,7 +27,7 @@
 ## Usage
 Run script from the root directory of the project:
 ```bash
-➜ python -m quiz --run --key {your-secret-api-key}
+➜ python -m quiz --key {your-secret-api-key}
 Running quiz bot (press ctrl+c to escape)
 ...
 ```
