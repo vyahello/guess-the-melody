@@ -14,8 +14,6 @@
 > 
 > It is called `GuessTheBot` so please check for it in the telegram application.
 
-![Screenshot](quiz/demo/bot.png)
-
 ## Tools
 - python 3.6+
 - [pyTelegramBotAPI](https://github.com/eternnoir/pyTelegramBotAPI)
@@ -27,9 +25,7 @@
 ## Usage
 Run script from the root directory of the project:
 ```bash
-➜ python -m quiz --key {your-secret-api-key}
-Running quiz bot (press ctrl+c to escape)
-...
+python -m quiz --key {your-secret-api-key}
 ```
 Please specify your telegram `API key` to be able to use a bot.
 
@@ -40,19 +36,16 @@ after every made change to the repository.
 
 To be able to run code analysis, please execute command below:
 ```bash
-➜ ./analyse-code.sh
+./analyse-code.sh
 ```
 
 ## Release notes
 
-* 0.1.1
-  * Add Travis CI tool
-* 0.1.0
-  * Distribute initial version on a bot
+Please check [CHANGELOG](CHANGELOG.md) file to get more details about actual versions and it's release notes.
 
 ### Meta
 
-Author – Volodymyr Yahello
+Author – _Volodymyr Yahello_. Please check [AUTHORS](AUTHORS.md) to see all contributors.
 
 Distributed under the `MIT` license. See [LICENSE](LICENSE.md) for more information.
 
