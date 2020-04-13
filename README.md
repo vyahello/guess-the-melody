@@ -14,6 +14,10 @@
 > 
 > It is called `GuessTheBot` so please check for it in the telegram application.
 
+# Usage
+
+![Usage](howto.gif)
+
 ## Tools
 - python 3.6+
 - [pyTelegramBotAPI](https://github.com/eternnoir/pyTelegramBotAPI)
@@ -25,9 +29,9 @@
 ## Usage
 Run script from the root directory of the project:
 ```bash
-python -m quiz --key {your-secret-api-key}
+python -m quiz
 ```
-Please specify your telegram `API key` to be able to use a bot.
+Please specify your telegram `API key` in [config.py](quiz/config.py) file to be able to use a bot.
 
 ## Development notes
 

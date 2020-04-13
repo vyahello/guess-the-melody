@@ -1,6 +1,6 @@
 class Config:
     """Bot setup config implementation."""
 
-    token: str = str()  # should be bot config token
+    token: str = ""  # should be bot config token
     db_name: str = "melody.db"
     shelve_name: str = "shelve"
