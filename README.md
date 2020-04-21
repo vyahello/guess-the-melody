@@ -25,6 +25,7 @@
   - [pytest](https://pypi.org/project/pytest/)
   - [flake8](http://flake8.pycqa.org/en/latest/)
   - [black](https://black.readthedocs.io/en/stable/)
+  - [travis](https://travis-ci.org) CI
 
 ## Usage
 Run script from the root directory of the project:
