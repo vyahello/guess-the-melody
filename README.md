@@ -19,8 +19,9 @@
 ![Usage](howto.gif)
 
 ## Tools
-- python 3.6+
-- [pyTelegramBotAPI](https://github.com/eternnoir/pyTelegramBotAPI)
+- backend
+  - python 3.6 | 3.7 | 3.8
+  - [pyTelegramBotAPI](https://github.com/eternnoir/pyTelegramBotAPI) library
 - code analysis
   - [pytest](https://pypi.org/project/pytest/)
   - [flake8](http://flake8.pycqa.org/en/latest/)
@@ -34,6 +35,8 @@ python -m quiz
 ```
 Please specify your telegram `API key` in [config.py](quiz/config.py) file to be able to use a bot.
 
+**[⬆ back to top](#guess-the-melody-quiz)**
+
 ## Development notes
 
 Project has Travis CI integration using [.travis.yml](.travis.yml) file thus code analysis (`black`) and unittests (`pytest`) will be run automatically
@@ -44,7 +47,7 @@ To be able to run code analysis, please execute command below:
 ./analyse-code.sh
 ```
 
-## Release notes
+### Release notes
 
 Please check [CHANGELOG](CHANGELOG.md) file to get more details about actual versions and it's release notes.
 
@@ -64,3 +67,5 @@ You can reach out me at:
 2. configure Git for the first time after cloning with your `name` and `email`
 3. `pip install -r requirements.txt` to install all project dependencies
 4. `pip install -r requirements-dev.txt` to install all dev project dependencies
+
+**[⬆ back to top](#guess-the-melody-quiz)**
