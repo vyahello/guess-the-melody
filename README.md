@@ -11,12 +11,6 @@
 
 # Guess the melody quiz
 > Simple quiz telegram bot game written in **python**. 
-> 
-> It is called `GuessTheBot` so please check for it in the telegram application.
-
-# Usage
-
-![Usage](howto.gif)
 
 ## Tools
 - backend
@@ -29,11 +23,21 @@
   - [travis](https://travis-ci.org) CI
 
 ## Usage
-Run script from the root directory of the project:
+
+![Usage](howto.gif)
+
+### Prerequisites
+
+Please follow instructions to be able to use a bot:
+  - Create own bot via `telegram` app
+  - Obtain `API key` from _@botfather_ via `telegram` app
+  - Specify your telegram `API key` in [config.py](quiz/config.py)
+
+### Quick start
+
 ```bash
 python -m quiz
 ```
-Please specify your telegram `API key` in [config.py](quiz/config.py) file to be able to use a bot.
 
 **[⬆ back to top](#guess-the-melody-quiz)**
 
