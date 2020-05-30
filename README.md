@@ -13,7 +13,7 @@
 
 ## Tools
 - backend
-  - python 3.6 | 3.7 | 3.8
+  - python 3.6, 3.7, 3.8
   - [pyTelegramBotAPI](https://github.com/eternnoir/pyTelegramBotAPI) library
 - code analysis
   - [pytest](https://pypi.org/project/pytest/)
