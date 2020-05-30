@@ -1,7 +1,6 @@
 [![made-with-python](https://img.shields.io/badge/Made%20with-Python-1f425f.svg)](https://www.python.org/)
 [![Code style: black](https://img.shields.io/badge/code%20style-black-000000.svg)](https://github.com/psf/black)
-[![Build Status](https://travis-ci.org/vyahello/guess-the-melody-bot.svg?branch=master)](https://travis-ci.org/vyahello/guess-the-melody-bot)
-[![Coverage Status](https://coveralls.io/repos/github/vyahello/guess-the-melody-bot/badge.svg?branch=master)](https://coveralls.io/github/vyahello/guess-the-melody-bot?branch=master)
+[![Build Status](https://travis-ci.org/vyahello/guess-the-melody.svg?branch=master)](https://travis-ci.org/vyahello/guess-the-melody)
 [![Forks](https://img.shields.io/github/forks/vyahello/guess-the-melody-bot)](https://github.com/vyahello/guess-the-melody-bot/network/members)
 [![Stars](https://img.shields.io/github/stars/vyahello/guess-the-melody-bot)](https://github.com/vyahello/guess-the-melody-bot/stargazers)
 [![Issues](https://img.shields.io/github/issues/vyahello/guess-the-melody-bot)](https://github.com/vyahello/guess-the-melody-bot/issues)
