@@ -1,11 +1,7 @@
 [![made-with-python](https://img.shields.io/badge/Made%20with-Python-1f425f.svg)](https://www.python.org/)
 [![Code style: black](https://img.shields.io/badge/code%20style-black-000000.svg)](https://github.com/psf/black)
+[![Checked with flake8](https://img.shields.io/badge/flake8-checked-blue)](http://flake8.pycqa.org/)
 [![Build Status](https://travis-ci.org/vyahello/guess-the-melody.svg?branch=master)](https://travis-ci.org/vyahello/guess-the-melody)
-[![Forks](https://img.shields.io/github/forks/vyahello/guess-the-melody-bot)](https://github.com/vyahello/guess-the-melody-bot/network/members)
-[![Stars](https://img.shields.io/github/stars/vyahello/guess-the-melody-bot)](https://github.com/vyahello/guess-the-melody-bot/stargazers)
-[![Issues](https://img.shields.io/github/issues/vyahello/guess-the-melody-bot)](https://github.com/vyahello/guess-the-melody-bot/issues)
-[![GitHub watchers](https://img.shields.io/github/watchers/vyahello/guess-the-melody-bot.svg)](https://GitHub.com/vyahello/guess-the-melody-bot/graphs/watchers/)
-[![GitHub contributors](https://img.shields.io/github/contributors/vyahello/guess-the-melody-bot.svg)](https://GitHub.com/vyahello/guess-the-melody-bot/graphs/contributors/)
 [![License](https://img.shields.io/badge/license-MIT-green.svg)](LICENSE.md)
 
 # Guess the melody quiz
