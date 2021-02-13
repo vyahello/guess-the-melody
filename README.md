@@ -1,3 +1,5 @@
+![Screenshot](logo.png)
+
 [![made-with-python](https://img.shields.io/badge/Made%20with-Python-1f425f.svg)](https://www.python.org/)
 [![Code style: black](https://img.shields.io/badge/code%20style-black-000000.svg)](https://github.com/psf/black)
 [![Checked with flake8](https://img.shields.io/badge/flake8-checked-blue)](http://flake8.pycqa.org/)
@@ -8,14 +10,17 @@
 > Simple quiz telegram bot game written in **python**. 
 
 ## Tools
-- backend
-  - python 3.6, 3.7, 3.8
-  - [pyTelegramBotAPI](https://github.com/eternnoir/pyTelegramBotAPI) library
-- code analysis
-  - [pytest](https://pypi.org/project/pytest/)
-  - [flake8](http://flake8.pycqa.org/en/latest/)
-  - [black](https://black.readthedocs.io/en/stable/)
-  - [travis](https://travis-ci.org) CI
+
+### Production
+- python 3.6, 3.7, 3.8
+- [pyTelegramBotAPI](https://github.com/eternnoir/pyTelegramBotAPI) library
+
+### Development
+
+- [pytest](https://pypi.org/project/pytest/)
+- [flake8](http://flake8.pycqa.org/en/latest/)
+- [black](https://black.readthedocs.io/en/stable/)
+- [travis](https://travis-ci.org)
 
 ## Usage
 
